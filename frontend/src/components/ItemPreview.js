@@ -4,6 +4,8 @@ import agent from "../agent";
 import { connect } from "react-redux";
 import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
 
+const fallbackimage = "/placeholder.png";
+
 const mapDispatchToProps = (dispatch) => ({
   favorite: (slug) =>
     dispatch({
@@ -35,8 +37,8 @@ const ItemPreview = (props) => {
       style={{ borderRadius: "20px" }}
     >
       <img
-        alt="item"
-        src={item.image}
+        alt="item" //
+        src={item.image || fallbackimage}
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
       />
